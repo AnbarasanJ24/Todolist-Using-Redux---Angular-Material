@@ -1,0 +1,10 @@
+<h1>ToDo List</h1>
+<input matInput class="input" placeholder="Add a Task" #title>
+<button mat-raised-button color="primary" (click)="addTodo(title)">ADD</button>
+<ul>
+  <li *ngFor="let todo of todos | async">
+    <span (click)="toggleTodo(todo)" [class.completed] = "todo.isCompleted">{{todo.title}}</span>
+    <button mat-raised-button (click)="removeTodo(todo)">Remove</button><br>
+  </li>
+</ul>
+

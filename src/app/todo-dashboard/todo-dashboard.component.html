@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+<p>
+  Last Update : {{ lastUpdate | async  | date:'mediumTime' }}
+</p>
+<p>
+  Total Items : {{ (todos | async).length }}
+</p>
+<p>
+  <button mat-raised-button (click)="removeAllTodo()"> Remove All</button>
+</p>
