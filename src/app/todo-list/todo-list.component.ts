@@ -15,13 +15,13 @@ export class TodoListComponent implements OnInit {
   @select() todos;
 
   constructor(private ngRedux : NgRedux <IAppState>) { }
+
   ngOnInit() {}
 
   addTodo(input){
     if (!input.value) return ;
 
     this.ngRedux.dispatch({ type: ADD_TODO, title: input.value });
-
     input.value ='';
   }
   
